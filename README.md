@@ -1,4 +1,4 @@
-# An example Dockerfile for undedected-chromedriver
+# An example Dockerfile for undetected-chromedriver
 
 This Dockerfile builds an image with undetected-chromedriver and a VNC server.
 The entrypoint ensures that the VNC server is running before the script is executed.
