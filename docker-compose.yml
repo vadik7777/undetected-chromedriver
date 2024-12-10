@@ -6,8 +6,10 @@ services:
     container_name: undetected-chromedriver
     command: python script.py
     entrypoint: /entrypoint.sh
+    shm_size: '2gb'
     volumes:
       - ./mount:/opt/wd
+#      - /root/chromedriver/mount:/opt/wd
     ports:
       - "5900:5900"
     environment:

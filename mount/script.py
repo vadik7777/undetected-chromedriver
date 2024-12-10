@@ -1,19 +1,22 @@
 import undetected_chromedriver as uc
-from selenium.webdriver.remote.webdriver import By
-import selenium.webdriver.support.expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
-
-import time
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 print("start of script")
 
 options = uc.ChromeOptions()
+# options.add_argument("--no-sandbox")
+options.add_argument("--disable-setuid-sandbox")
+options.add_argument("--ignore-certificate-errors")
+
 driver = uc.Chrome(options)
 driver.maximize_window()
 
-driver.get("https://ria.ru")
-driver.save_screenshot('ria.png')
+driver.get("https://lenta.ru")
+driver.save_screenshot('lenta.png')
+
+driver.get("https://www.e1.ru")
+driver.save_screenshot('e1.png')
+driver.close()
 
 print("end of script")
-
-while True: time.sleep(10)
