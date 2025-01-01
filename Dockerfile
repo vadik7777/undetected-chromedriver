@@ -32,8 +32,9 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 # Install Python dependencies and update pip
 RUN pip install --upgrade pip
-RUN pip install ipython
+RUN pip install pytest
 RUN pip install undetected-chromedriver
+RUN pip install selenium
 
 # add google chrome repo and accept the key + install chrome
 RUN echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
